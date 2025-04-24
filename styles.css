@@ -1,0 +1,209 @@
+body {
+  font-family:poppins,sanserif;
+background-color:white;
+  color:rgba(158,71,51,255);
+  }
+h1,h2,p,figure,img,footer,#header,#vision-p{
+  text-align:center;
+}
+ .header{
+background:#1b9b86;
+padding:50px 0 50px 0;
+position: sticky;
+  top: 0;
+   box-sizing: border-box;
+}
+* {
+  box-sizing: border-box;
+}
+.logo{
+width:45%;
+float:left;
+padding:0;
+margin:0.1% 2%;
+  padding:0;
+  border:0;
+box-sizing: border-box;
+}
+
+#logo-img{
+  width:50%;
+  height:100%;
+  object-fit: fill;
+  text-align:left;
+  padding:-50px -100px;
+  margin:-50px -100px;
+  border:0;
+  position: absolute;
+}
+
+#header{
+  width:15%;
+  height:auto;
+float:left;
+margin:0.1%;
+border:2px solid black;
+border-radius:50px;
+box-sizing: border-box;
+}
+.about{
+  margin:20px 50px;
+  padding:0;
+}
+
+h2{
+  font-size:1.1em;
+  }
+  h3{
+  font-size:0.9em;
+  }
+  #who-we-are, .about{
+  text-align:justify;
+}
+  .section{
+  margin:20px;
+  width:auto;
+  }
+.activities{
+  width:33.3%;
+float:left;
+box-sizing: border-box;
+margin:0 0 20px 0;
+  height:500px;
+  border: 5px solid #e1ccab;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+#activity{
+  width:100%;
+  height:100%;
+  object-fit: fill;
+}
+.act-caption{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ background:rgba(0,0,0,0.5);
+ border-radius:5px;
+  font-size:1.1em;
+}
+
+.projects{
+width:33.3%;
+float:left;
+box-sizing: border-box;
+margin:0 0 20px 0;
+  height:500px;
+  border: 5px solid #e1ccab;
+}
+#project{
+  width:100%;
+  height:95%;
+  object-fit: fill;
+}
+.voices{
+  width:33.3%;
+float:left;
+padding:auto;
+box-sizing: border-box;
+margin:0 0 20px 0;
+  height:500px;
+  border: 5px solid #e1ccab;
+}
+#img-voices{
+  width:100%;
+  height:85%;
+  object-fit: fill;
+}
+#partner{
+  margin:10%;
+ }
+.sectionf{
+  box-sizing: border-box;
+}
+#donor{
+  width:20%;
+float:left;
+padding:0 50px;
+box-sizing: border-box;
+  height:auto;
+  text-align:center;
+}
+#footer{
+  width:33%;
+float:left;
+padding:10px;
+box-sizing: border-box;
+  text-align:center;
+  height:300px;
+background:#1b9b86;
+}
+#footer p{
+color:white;
+}
+#footer h2{
+color:black;
+}
+.copy-right{
+  color:white;
+  background:black;
+  border-color:2px solid white;
+}
+#donor{
+background-color:white;
+}
+header a{
+  color:white;
+  text-decoration:none;
+}
+#header{
+  color:white;
+  text-decoration:none;
+  background:#9e4733;
+}
+#header:hover{
+text-decoration:none;
+background:black;
+}
+#header a:focus{
+ border:2px solid black;
+}
+header a:active{
+  color:pink;  
+}
+header a:visited{
+  color:purple;
+}
+ footer a{
+  color:white;
+  text-decoration:none;
+}
+footer a:hover{
+text-decoration:none;
+border:2px solid black;
+border-radius:5px;
+background-color:rgba(158,71,51,255);
+}
+footer a:active{
+  color:purple;
+}
+footer a:visited{
+  color:pink;
+}
+footer a:focus{
+  border:2px solid black;
+}
+a:hover{
+text-decoration:none;
+}
+a:active{
+ color:pink;  
+}
+a:visited{
+ color:purple;  
+}
+a:focus{
+ border:2px solid black;
+}
