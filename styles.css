@@ -106,10 +106,7 @@ background-color:rgba(158,71,51,1);
 .header-menu:focus{
 background-color:rgba(158,71,51,1); 
 }
-.header-menu:visited{
-color:yellow;
-border:2px solid #1b9b86;
-}
+
 .header-menu:active{
 color:black; 
 }
@@ -535,9 +532,7 @@ background-color:rgba(158,71,51,1);
 border:1px solid black; 
  border-radius:20px;
 }
-.footer-links:visited{
-color:purple;
-}
+
 .footer-links:active{
 color:black; 
 }
