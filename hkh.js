@@ -30,7 +30,7 @@ function showAutoSlides() {
   slides[autoSlideIndex-1].style.display = "block";  
   dots[autoSlideIndex-1].className += " active";
   
-  setTimeout(showAutoSlides, 2000); // Change image every 2 seconds
+  setTimeout(showAutoSlides, 5000); // Change image every 2 seconds
 }
 
 
