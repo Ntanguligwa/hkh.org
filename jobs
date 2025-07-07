@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Google Web Designer 16.3.0.0407">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="HKH Logo Main.svg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Hatua kwa Hatua Foundation</title>
+  <style></style>
+</head>
+
+<body class="htmlNoPages">
+  <header class="header">
+    <a href="#who-we-are">
+      <img src="HKH Logo Main.svg" id="logo-img">
+    </a>
+    <nav class="nav-menu" id="nav-menu">
+      <a href="#who-we-are" class="header-menu">Who we are</a>
+      <a href="#what-we-do" class="header-menu">What we do</a>
+      <a href="#voices" class="header-menu">Our Impact</a>
+      <a href="#team" class="header-menu">Our Team</a>
+      <a href="Coming-soon.html" class="header-menu">Tenders and Jobs</a>
+           <a href="#footer" class="header-menu">Contact us</a>
+    </nav>
+    <!-- Hamburger for mobile view -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+  </header>
+    <section id="who-we-are">
+      <div id="about">
+      <h1 id="approaches">OPEN VACANCY:</h1>
+<p><strong>Position Title: Interns</strong></p>
+<p><strong>Job Location: Remote</strong></p>
+<p><strong>Employment Type: Specific Task</strong></p>
+<p><strong>Remuneration: Pay for Performance (P4P)</strong></p>
+<h2>Position Summary:</h2>
+<p>Hatua kwa Hatua Foundation is a Youth led organization operating in Tanzania. Our core objective is to empower women and youth to overcome health and socioeconomic challenges through transformative programs that promote health equity, economic independence, and social empowerment. With the following specific objectives:</p>
+<ol>
+        <li class="about">To improve the health and well-being of women and youth through targeted interventions that promote access to quality healthcare, healthy lifestyles, and health education.</li>
+        <li class="about">To enhance the livelihoods of women and youth by providing opportunities for economic empowerment, skills development, and financial independence.</li>
+        <li class="about">To advocate for climate change adaptation and resilience, focusing on empowering women and youth to address the impacts of climate change and build sustainable futures.</li>
+      </ol>
+<p>The volunteers will be responsible for routine operations of the organization with regards to health and climate action. This will be conducted on assignment basis.</p>
+<h2>Roles and Responsibilities:</h2>
+<ul>
+        <li class="about">To conduct health promotion activities targeting women and youth.</li>
+       <li class="about">To conduct out-reach activities targeting women and youth with regards to climate and health.</li>
+<li class="about">To lead climate action activities targeting groups of women and youths reached.</li>
+<li class="about">To map implementing partners in their districts of operations for potential partnerships.
+</li>
+<li class="about">To represent Hatua kwa Hatua Foundation in their areas of implementation.</li>
+<li class="about">To perform any other related duties as may be assigned by the supervisor.
+</li>
+     </ul>
+<h2>Qualifications, Knowledge, Skills</h2>
+<ul>
+<li class="about"><strong>Minimum required Education:</strong> Applicants must have graduated with at-least diploma in the fields of health sciences, environmental sciences, Climate or Sociology from a college recognized by the Government.
+</li>
+<li class="about">Applicants must be aged between 18 to 30 years by the time of application.</li>
+<li class="about">No experience required. Women and marginalized populations are highly encouraged to apply.</li>
+<li class="about">It is desired but not required that the volunteer owns a smart phone.</li>
+<li class="about">Must be based in Dar es salaam, Dodoma or Mbeya or anywhere else if willing to relocate without compensation</li>
+<li class="about"></li>
+</ul>
+<h3><strong><em>Disclaimer</em></strong></h3>
+<p class="about"><em>Hatua kwa Hatua Foundation is an equal opportunity employer that is committed to diversity and inclusion in the workplace. We prohibit discrimination and harassment of any kind based on race, color, sex, religion, sexual orientation, national origin, disability, genetic information, pregnancy, or any other protected characteristic as outlined by federal, state, or local laws.</em></p>
+      
+<p><strong>To apply please send your CV to hatuaincp@gmail.com</strong></p>
+<p><strong>Deadline: 07th August 2025</strong></p>
+<p><strong><em>Beware of Fraud, Hatua kwa Hatua Foundation does not charge money or fees at any stage of recruitment.</em></strong></p>
+
+</section>
+    <section id="partner">
+      <h1 class="heading">Our Partners</h1>
+      <div class="scroll-container">
+        <figure class="donor">
+          <a href="https://www.moh.go.tz/">
+            <img src="MoH.png" alt="Ministry of Health Tanzania" class="partner-img">
+          </a>
+          <a href="https://www.afro.who.int/">
+            <img src="WHO.png" alt="World Health Organization" class="partner-img">
+          </a>
+          <a href="https://doctorswithafrica.org/">
+            <img src="NEW_cuamm_ENG_RGB.png" alt="Doctors with Africa-CUAMM" class="partner-img">
+          </a>
+        </figure>
+      </div>
+    </section>
+    <footer id="footer">
+      <section class="footer">
+        <h1 style="color: black;">Who we are</h1>
+        <div class="sectionf">
+          <a href="#who-we-are" class="footer-links">About</a><br>
+          <a href="#vision" class="footer-links">Vision</a><br>
+          <a href="#mission" class="footer-links">Mission</a><br>
+          <a href="#approaches" class="footer-links">Approaches</a>
+        </div>
+      </section>
+      <section class="footer">
+        <i class="material-icons" style="font-size: 30px; color: black;">pin_drop</i>
+        <div class="sectionf">
+          <address id="address">
+                <p><a href="https://maps.app.goo.gl/3Aehq8iZjTsLg93B6" id="pin" class="footer-links">Family Road,<br> Mapangashaa Street, Salasala.<br>
+                Dar es salaam, Tanzania</a></p>
+                <p><i class="material-icons" style="font-size: 20px; color: black;">call</i><a href="tel:+255785071020" class="footer-links"> +255785071020</a></p>
+                <p><i class="material-icons" style="font-size: 20px; color: black;">email</i><a href="mailto:hatuaincp@gmail.com" class="footer-links"> hatuaincp@gmail.com</a></p>
+            </address>
+        </div>
+      </section>
+      <section class="footer">
+        <h1 style="color: black;">Contact us</h1>
+        <div class="sectionf">
+          <a href="https://www.instagram.com/hkh_foundation/" class="fa fa-instagram footer-links"></a><br>
+          <a href="https://x.com/hkh_foundation?t=Hq-jaBw2WMWywia7Kx_Pzw&amp;s=08" class="fa fa-twitter footer-links"></a><br>
+          <a href="https://www.linkedin.com/company/hatua-kwa-hatua-foundation/" class="fa fa-linkedin footer-links"></a>
+        </div>
+      </section>
+    </footer>
+    <p id="copyright" style="color: black; text-align: center;">©Hatua kwa Hatua Foundation 2025</p>
+    <script src="hkh.js"></script>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/255785071020" class="whatsapp-button" target="_blank">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp">
+      <span class="whatsapp-text">Chat with us!</span>
+    </a>
+  </div>
+</body>
+
+</html>
