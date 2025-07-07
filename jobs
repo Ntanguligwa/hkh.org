@@ -23,7 +23,7 @@
       <a href="#what-we-do" class="header-menu">What we do</a>
       <a href="#voices" class="header-menu">Our Impact</a>
       <a href="#team" class="header-menu">Our Team</a>
-      <a href="Coming-soon.html" class="header-menu">Tenders and Jobs</a>
+      <a href="jobs.html" class="header-menu">Tenders and Jobs</a>
            <a href="#footer" class="header-menu">Contact us</a>
     </nav>
     <!-- Hamburger for mobile view -->
