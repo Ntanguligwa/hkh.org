@@ -100,40 +100,55 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Voices slideshow
-  let voiceSlideIndex = 1;
-  showVoiceSlides(voiceSlideIndex);
+  // Add this to your existing hkh.js file, replacing any existing voices slideshow code
 
-  function plusVoiceSlides(n) {
-    showVoiceSlides(voiceSlideIndex += n);
+// Voices Slideshow
+let voiceSlideIndex = 1;
+showVoiceSlides(voiceSlideIndex);
+
+function plusVoiceSlides(n) {
+  showVoiceSlides(voiceSlideIndex += n);
+}
+
+function currentVoiceSlide(n) {
+  showVoiceSlides(voiceSlideIndex = n);
+}
+
+function showVoiceSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("voices");
+  const dots = document.getElementsByClassName("demo");
+  const captionText = document.getElementById("voices-cap");
+  
+  if (!slides.length) return;
+  
+  if (n > slides.length) { voiceSlideIndex = 1 }
+  if (n < 1) { voiceSlideIndex = slides.length }
+  
+  // Hide all slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
   }
-
-  function currentVoiceSlide(n) {
-    showVoiceSlides(voiceSlideIndex = n);
+  
+  // Update dot indicators
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
   }
-
-  function showVoiceSlides(n) {
-    let i;
-    const slides = document.getElementsByClassName("voices");
-    const dots = document.getElementsByClassName("demo");
-    const captionText = document.getElementById("voices-cap");
-    
-    if (!slides.length || !dots.length) return;
-    
-    if (n > slides.length) { voiceSlideIndex = 1 }
-    if (n < 1) { voiceSlideIndex = slides.length }
-    
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    
-    slides[voiceSlideIndex-1].style.display = "block";  
-    dots[voiceSlideIndex-1].className += " active";
-    if (captionText) captionText.innerHTML = dots[voiceSlideIndex-1].alt;
+  
+  // Show current slide
+  slides[voiceSlideIndex-1].style.display = "block";  
+  if (dots.length > 0) {
+    dots[voiceSlideIndex-1].classList.add("active");
   }
+  if (captionText) {
+    captionText.textContent = dots[voiceSlideIndex-1].alt;
+  }
+}
 
+// Make functions available globally for HTML onclick attributes
+window.plusVoiceSlides = plusVoiceSlides;
+window.currentVoiceSlide = currentVoiceSlide;
+  
   // Lazy loading for images
   if ('loading' in HTMLImageElement.prototype) {
     const images = document.querySelectorAll('img[loading="lazy"]');
