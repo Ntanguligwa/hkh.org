@@ -81,6 +81,32 @@ h2 { font-size: 2rem; }
 h3 { font-size: 1.75rem; }
 h4 { font-size: 1.5rem; }
 
+.underlined-heading {
+  display: inline-block;
+  border-bottom: 2px solid var(--secondary-color); /* Using your blue */
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+h2:hover::after {
+  width: 100%;
+}
+
 p {
   margin-bottom: var(--space-md);
 }
