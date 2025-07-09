@@ -1,118 +1,185 @@
-    // Improved JavaScript with modern features and error handling
-    document.addEventListener('DOMContentLoaded', () => {
-      // Hamburger menu with ARIA attributes
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('nav-menu');
+document.addEventListener('DOMContentLoaded', () => {
+  // Set current year in footer
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+
+  // Header scroll effect
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('show');
+    });
+  }
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
       
-      if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-          const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-          hamburger.setAttribute('aria-expanded', !isExpanded);
-          navMenu.classList.toggle('show');
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
         });
-      }
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-          
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: 'smooth'
-            });
-            
-            // Close mobile menu if open
-            if (navMenu.classList.contains('show')) {
-              hamburger.setAttribute('aria-expanded', 'false');
-              navMenu.classList.remove('show');
-            }
-          }
-        });
-      });
-
-      // Your existing slideshow code with some improvements
-      let autoSlideIndex = 0;
-      const autoSlideInterval = 5000;
-      let autoSlideTimer;
-
-      function startAutoSlideshow() {
-        showAutoSlides();
-        autoSlideTimer = setInterval(showAutoSlides, autoSlideInterval);
-      }
-
-      function showAutoSlides() {
-        const slides = document.getElementsByClassName("mySlides");
-        const dots = document.getElementsByClassName("dot");
         
-        if (!slides.length || !dots.length) return;
-        
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
+        // Close mobile menu if open
+        if (navMenu.classList.contains('show')) {
+          hamburger.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('show');
         }
-        
-        autoSlideIndex++;
-        if (autoSlideIndex > slides.length) autoSlideIndex = 1;
-        
-        for (let i = 0; i < dots.length; i++) {
-          dots[i].classList.remove("active");
-        }
-        
-        slides[autoSlideIndex-1].style.display = "block";  
-        dots[autoSlideIndex-1].classList.add("active");
       }
+    });
+  });
 
-      // Initialize slideshow
+  // Main slideshow
+  let autoSlideIndex = 0;
+  const autoSlideInterval = 5000;
+  let autoSlideTimer;
+
+  function startAutoSlideshow() {
+    showAutoSlides();
+    autoSlideTimer = setInterval(showAutoSlides, autoSlideInterval);
+  }
+
+  function showAutoSlides() {
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dot");
+    
+    if (!slides.length || !dots.length) return;
+    
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    
+    autoSlideIndex++;
+    if (autoSlideIndex > slides.length) autoSlideIndex = 1;
+    
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
+    
+    slides[autoSlideIndex-1].style.display = "block";  
+    dots[autoSlideIndex-1].classList.add("active");
+  }
+
+  // Manual slide control
+  function currentSlide(n) {
+    clearInterval(autoSlideTimer);
+    autoSlideIndex = n - 1;
+    showAutoSlides();
+    autoSlideTimer = setInterval(showAutoSlides, autoSlideInterval);
+  }
+
+  // Initialize slideshow
+  startAutoSlideshow();
+
+  // Pause on hover
+  const slideshowContainer = document.querySelector('.slideshow-container');
+  if (slideshowContainer) {
+    slideshowContainer.addEventListener('mouseenter', () => {
+      clearInterval(autoSlideTimer);
+    });
+    
+    slideshowContainer.addEventListener('mouseleave', () => {
       startAutoSlideshow();
-
-      // Pause on hover for better UX
-      const slideshowContainer = document.querySelector('.slideshow-container');
-      if (slideshowContainer) {
-        slideshowContainer.addEventListener('mouseenter', () => {
-          clearInterval(autoSlideTimer);
-        });
-        
-        slideshowContainer.addEventListener('mouseleave', () => {
-          startAutoSlideshow();
-        });
-      }
-
-      // Your existing voice slides code
-     let voiceSlideIndex = 1;
-showVoiceSlides(voiceSlideIndex);
-
-function plusVoiceSlides(n) {
-  showVoiceSlides(voiceSlideIndex += n);
-}
-
-function currentVoiceSlide(n) {
-  showVoiceSlides(voiceSlideIndex = n);
-}
-
-function showVoiceSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("voices");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("voices-cap");
-  
-  if (n > slides.length) { voiceSlideIndex = 1 }
-  if (n < 1) { voiceSlideIndex = slides.length }
-  
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    });
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  
-  slides[voiceSlideIndex-1].style.display = "block";  
-  dots[voiceSlideIndex-1].className += " active";
-  captionText.innerHTML = dots[voiceSlideIndex-1].alt;
-}
 
-      // ... rest of your existing JS ...
+  // Voices slideshow
+  let voiceSlideIndex = 1;
+  showVoiceSlides(voiceSlideIndex);
+
+  function plusVoiceSlides(n) {
+    showVoiceSlides(voiceSlideIndex += n);
+  }
+
+  function currentVoiceSlide(n) {
+    showVoiceSlides(voiceSlideIndex = n);
+  }
+
+  function showVoiceSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("voices");
+    const dots = document.getElementsByClassName("demo");
+    const captionText = document.getElementById("voices-cap");
+    
+    if (!slides.length || !dots.length) return;
+    
+    if (n > slides.length) { voiceSlideIndex = 1 }
+    if (n < 1) { voiceSlideIndex = slides.length }
+    
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    slides[voiceSlideIndex-1].style.display = "block";  
+    dots[voiceSlideIndex-1].className += " active";
+    if (captionText) captionText.innerHTML = dots[voiceSlideIndex-1].alt;
+  }
+
+  // Lazy loading for images
+  if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+      img.loading = 'lazy';
+    });
+  } else {
+    // Fallback for browsers that don't support native lazy loading
+    const lazyLoadObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          lazyLoadObserver.unobserve(img);
+        }
+      });
     });
 
-    // Your other functions remain similar but could be modernized
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      img.dataset.src = img.src;
+      img.src = '';
+      lazyLoadObserver.observe(img);
+    });
+  }
+});
+
+// Fallback for browsers that don't support ES6 modules
+if (!window.currentSlide) {
+  window.currentSlide = function(n) {
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+    const event = new Event('DOMContentLoaded');
+    document.dispatchEvent(event);
+    setTimeout(() => currentSlide(n), 100);
+  };
+  
+  window.plusVoiceSlides = function(n) {
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+    const event = new Event('DOMContentLoaded');
+    document.dispatchEvent(event);
+    setTimeout(() => plusVoiceSlides(n), 100);
+  };
+  
+  window.currentVoiceSlide = function(n) {
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+    const event = new Event('DOMContentLoaded');
+    document.dispatchEvent(event);
+    setTimeout(() => currentVoiceSlide(n), 100);
+  };
+}
