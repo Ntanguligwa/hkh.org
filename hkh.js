@@ -13,16 +13,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Hamburger menu
-  const hamburger = document.getElementById('hamburger');
+ const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
-  
+
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', !isExpanded);
-      navMenu.classList.toggle('show');
+    hamburger.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('active');
+      document.body.style.overflow = isExpanded ? '' : 'hidden';
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (link.getAttribute('href').startsWith('#')) {
+          navMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && e.target !== hamburger) {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
     });
   }
+
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
