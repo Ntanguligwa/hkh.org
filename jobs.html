@@ -110,47 +110,49 @@
     </section>
   </main>
 
-  <footer id="footer">
-    <section class="footer">
+   <footer id="footer" aria-label="Footer">
+    <section class="footer-section">
       <h2>Who we are</h2>
-      <div class="sectionf">
-        <a href="index.html" class="footer-links">About us</a>
+      <div class="footer-links-container">
+        <a href="#who-we-are" class="footer-link">About</a>
+        <a href="#vision" class="footer-link">Vision</a>
+        <a href="#mission" class="footer-link">Mission</a>
+        <a href="#approaches" class="footer-link">Approaches</a>
       </div>
     </section>
-
-    <section class="footer">
-      <i class="material-icons" aria-hidden="true">pin_drop</i>
-      <div class="sectionf">
-        <address id="address">
-          <p><a href="https://maps.app.goo.gl/3Aehq8iZjTsLg93B6" id="pin" class="footer-links">
-            Family Road,<br>
-            Mapangashaa Street, Salasala.<br>
-            Dar es salaam, Tanzania
-          </a></p>
-          <p><i class="material-icons" aria-hidden="true">call</i><a href="tel:+255785071020" class="footer-links"> +255785071020</a></p>
-          <p><i class="material-icons" aria-hidden="true">email</i><a href="mailto:hatuaincp@gmail.com" class="footer-links"> hatuaincp@gmail.com</a></p>
-        </address>
-      </div>
+    
+    <section class="footer-section">
+      <h2>Contact Information</h2>
+      <address class="footer-address">
+        <a href="https://maps.app.goo.gl/3Aehq8iZjTsLg93B6" class="footer-link"><i class="material-icons footer-icon">pin_drop</i>Family Road,<br> Mapangashaa Street, Salasala.<br>
+        Dar es salaam, Tanzania</a>
+        <p><i class="material-icons footer-icon">call</i><a href="tel:+255785071020" class="footer-link"> +255785071020</a></p>
+        <p><i class="material-icons footer-icon">email</i><a href="mailto:hatuaincp@gmail.com" class="footer-link"> hatuaincp@gmail.com</a></p>
+      </address>
     </section>
-
-    <section class="footer">
-      <h2>Connect with us</h2>
-      <div class="sectionf">
-        <a href="https://www.instagram.com/hkh_foundation/" class="fa fa-instagram footer-links" aria-label="Instagram"></a>
-        <a href="https://x.com/hkh_foundation?t=Hq-jaBw2WMWywia7Kx_Pzw&s=08" class="fa fa-twitter footer-links" aria-label="Twitter"></a>
-        <a href="https://www.linkedin.com/company/hatua-kwa-hatua-foundation/" class="fa fa-linkedin footer-links" aria-label="LinkedIn"></a>
+    
+    <section class="footer-section">
+      <h2>Follow Us</h2>
+      <div class="social-links">
+        <a href="https://www.instagram.com/hkh_foundation/" class="fa fa-instagram footer-link" aria-label="Instagram"></a>
+        <a href="https://x.com/hkh_foundation?t=Hq-jaBw2WMWywia7Kx_Pzw&amp;s=08" class="fa fa-twitter footer-link" aria-label="Twitter"></a>
+        <a href="https://www.linkedin.com/company/hatua-kwa-hatua-foundation/" class="fa fa-linkedin footer-link" aria-label="LinkedIn"></a>
       </div>
     </section>
   </footer>
-
-  <p id="copyright">©Hatua kwa Hatua Foundation <span id="current-year"></span></p>
+  
+  <p id="copyright">© Hatua kwa Hatua Foundation <span id="current-year"></span></p>
 
   <!-- WhatsApp Button -->
-  <a href="https://wa.me/255785071020" class="whatsapp-button" target="_blank" aria-label="Chat with us on WhatsApp">
-    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="" aria-hidden="true">
+  <a href="https://wa.me/255785071020" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp">
     <span class="whatsapp-text">Chat with us!</span>
   </a>
 
   <script src="hkh.js"></script>
+  <script>
+    // Update copyright year automatically
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
