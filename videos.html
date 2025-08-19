@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hatua kwa Hatua Foundation - Video content showcasing our work in Tanzania">
+  <meta name="keywords" content="Tanzania, NGO, videos, climate action, youth empowerment">
+  <meta name="generator" content="Google Web Designer 16.3.0.0407">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="HKH Logo Main.svg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Hatua kwa Hatua Foundation | Videos</title>
+  <style>
+    /* Video page specific styles */
+    .video-hero {
+      background-color: var(--secondary-color);
+      padding: var(--space-xl) 0;
+      text-align: center;
+      color: white;
+    }
+    
+    .video-hero h1 {
+      color: white;
+      margin-bottom: var(--space-md);
+    }
+    
+    .video-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-lg);
+    }
+    
+    .featured-video {
+      margin-bottom: var(--space-xl);
+    }
+    
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+    
+    .video-card {
+      background: white;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease;
+    }
+    
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .video-card-content {
+      padding: var(--space-md);
+    }
+    
+    .video-card h3 {
+      color: var(--primary-color);
+      margin-bottom: var(--space-sm);
+    }
+    
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="htmlNoPages">
+  <header class="header">
+    <a href="index.html" aria-label="Home">
+      <img src="HKH Logo Main.svg" id="logo-img" alt="Hatua kwa Hatua Foundation Logo">
+    </a>
+    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+      <a href="index.html#who-we-are" class="header-menu">Who we are</a>
+      <a href="index.html#what-we-do" class="header-menu">What we do</a>
+      <a href="index.html#voices" class="header-menu">Our Impact</a>
+      <a href="index.html#team" class="header-menu">Our Team</a>
+      <a href="jobs.html" class="header-menu">Tenders and Jobs</a>
+      <a href="index.html#footer" class="header-menu">Contact us</a>
+      <a href="videos.html" class="header-menu active">Videos</a>
+    </nav>
+    <!-- Hamburger for mobile view -->
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      ☰
+    </button>
+  </header>
+
+  <main>
+    <section class="video-hero">
+      <div class="video-container">
+        <h1>Our Videos</h1>
+        <p>Watch our latest content showcasing the impact of our work in Tanzania</p>
+      </div>
+    </section>
+    
+    <section class="video-container">
+      <div class="featured-video">
+        <h2>Featured Video</h2>
+        <div class="video-wrapper">
+          <!-- First video with autoplay and sound on by default -->
+          <iframe src="https://www.youtube.com/embed/PyTtjf_xFXE?autoplay=1&mute=0" 
+                  title="Unveiling ClimateFlix" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      
+      <div class="video-playlist">
+        <h2>Our Video Collection</h2>
+        <div class="video-grid">
+          <!-- First playlist video -->
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/1_0P2Y_Z9Fg" 
+                      title="YouTube video player" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerpolicy="strict-origin-when-cross-origin" 
+                      allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card-content">
+              <h3>Climate Action Initiative</h3>
+              <p>Our team working on environmental conservation projects in local communities.</p>
+            </div>
+          </div>
+          
+          <!-- Additional video cards can be added here -->
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/PyTtjf_xFXE" 
+                      title="Unveiling ClimateFlix" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerpolicy="strict-origin-when-cross-origin" 
+                      allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card-content">
+              <h3>Unveiling ClimateFlix</h3>
+              <p>Introduction to our innovative climate education platform.</p>
+            </div>
+          </div>
+          
+          <!-- Placeholder for future videos -->
+          <div class="video-card">
+            <div class="video-wrapper" style="background-color: var(--gray-light); display: flex; align-items: center; justify-content: center;">
+              <i class="material-icons" style="font-size: 3rem; color: var(--primary-color);">play_circle_outline</i>
+            </div>
+            <div class="video-card-content">
+              <h3>More Content Coming Soon</h3>
+              <p>We're continuously creating new content to share our journey.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" aria-label="Footer">
+    <section class="footer-section">
+      <h2>Who we are</h2>
+      <div class="footer-links-container">
+        <a href="index.html#who-we-are" class="footer-link">About</a>
+        <a href="index.html#vision" class="footer-link">Vision</a>
+        <a href="index.html#mission" class="footer-link">Mission</a>
+        <a href="index.html#approaches" class="footer-link">Approaches</a>
+      </div>
+    </section>
+    
+    <section class="footer-section">
+      <h2>Contact Information</h2>
+      <address class="footer-address">
+        <a href="https://maps.app.goo.gl/3Aehq8iZjTsLg93B6" class="footer-link"><i class="material-icons footer-icon">pin_drop</i>Family Road,<br> Mapangashaa Street, Salasala.<br>
+        Dar es salaam, Tanzania</a>
+        <p><i class="material-icons footer-icon">call</i><a href="tel:+255785071020" class="footer-link"> +255785071020</a></p>
+        <p><i class="material-icons footer-icon">email</i><a href="mailto:hatuaincp@gmail.com" class="footer-link"> hatuaincp@gmail.com</a></p>
+      </address>
+    </section>
+    
+    <section class="footer-section">
+      <h2>Follow Us</h2>
+      <div class="social-links">
+        <a href="https://www.instagram.com/hkh_foundation/" class="fa fa-instagram footer-link" aria-label="Instagram"></a>
+        <a href="https://x.com/hkh_foundation?t=Hq-jaBw2WMWywia7Kx_Pzw&amp;s=08" class="fa fa-twitter footer-link" aria-label="Twitter"></a>
+        <a href="https://www.linkedin.com/company/hatua-kwa-hatua-foundation/" class="fa fa-linkedin footer-link" aria-label="LinkedIn"></a>
+      </div>
+    </section>
+  </footer>
+  
+  <p id="copyright">© Hatua kwa Hatua Foundation <span id="current-year"></span></p>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/255785071020" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp">
+    <span class="whatsapp-text">Chat with us!</span>
+  </a>
+
+  <script src="hkh.js"></script>
+  <script>
+    // Update copyright year automatically
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Highlight the active menu item
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = location.pathname.split('/').pop();
+      const menuLinks = document.querySelectorAll('.header-menu');
+      
+      menuLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
