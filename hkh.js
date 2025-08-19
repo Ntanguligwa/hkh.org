@@ -196,3 +196,30 @@ if (!window.currentSlide) {
     setTimeout(() => currentVoiceSlide(n), 100);
   };
 }
+
+// Visitor counter functionality
+function updateVisitorCount() {
+  // Check if we've already counted this visitor
+  if (!localStorage.getItem('visited')) {
+    // This is a new visitor
+    let count = localStorage.getItem('visitorCount') || 0;
+    count = parseInt(count) + 1;
+    localStorage.setItem('visitorCount', count);
+    localStorage.setItem('visited', 'true');
+    
+    // Update the display
+    document.getElementById('visitor-counter').textContent = count.toLocaleString();
+  } else {
+    // Returning visitor - just show the count
+    let count = localStorage.getItem('visitorCount') || 0;
+    document.getElementById('visitor-counter').textContent = parseInt(count).toLocaleString();
+  }
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+  // ... your existing code ...
+  
+  // Add visitor count functionality
+  updateVisitorCount();
+});
