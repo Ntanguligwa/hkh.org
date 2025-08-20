@@ -199,23 +199,26 @@ if (!window.currentSlide) {
 
 // Visitor counter functionality
 function updateVisitorCount() {
-  // Check if we've already counted this visitor
-  if (!localStorage.getItem('visited')) {
-    // This is a new visitor
-    let count = localStorage.getItem('visitorCount') || 0;
-    count = parseInt(count) + 1;
-    localStorage.setItem('visitorCount', count);
-    localStorage.setItem('visited', 'true');
-    
-    // Update the display
-    document.getElementById('visitor-counter').textContent = count.toLocaleString();
-  } else {
-    // Returning visitor - just show the count
-    let count = localStorage.getItem('visitorCount') || 0;
-    document.getElementById('visitor-counter').textContent = parseInt(count).toLocaleString();
-  }
+  fetch('https://api.countapi.xyz/hit/hatua-kwa-hatua-foundation/visits')
+    .then(response => response.json())
+    .then(data => {
+      const count = data.value;
+      document.getElementById('visitor-counter').textContent = count.toLocaleString();
+      document.getElementById('visitor-number').textContent = `#${count}`;
+    })
+    .catch(error => {
+      console.error('Error fetching visitor count:', error);
+      // Fallback code
+      let count = localStorage.getItem('visitorCount') || 1;
+      if (!localStorage.getItem('visited')) {
+        count = parseInt(count) + 1;
+        localStorage.setItem('visitorCount', count);
+        localStorage.setItem('visited', 'true');
+      }
+      document.getElementById('visitor-counter').textContent = parseInt(count).toLocaleString();
+      document.getElementById('visitor-number').textContent = `#${count}`;
+    });
 }
-
 // Call the function when the page loads
 document.addEventListener('DOMContentLoaded', () => {
   // ... your existing code ...
@@ -223,3 +226,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add visitor count functionality
   updateVisitorCount();
 });
+
