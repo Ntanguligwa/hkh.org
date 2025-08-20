@@ -739,3 +739,19 @@ a:focus, button:focus, input:focus, textarea:focus {
 .content-section {
   animation: fadeIn 0.5s ease-out;
 }
+
+.visitor-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  margin: 0;
+}
