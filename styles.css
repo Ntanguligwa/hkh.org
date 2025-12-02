@@ -240,7 +240,7 @@ main {
   text-align: center;
   padding: 15px 0;
   position: absolute;
-  bottom: 0;
+  bottom: -15px;
   width: 100%;
   z-index: 10; /* Higher z-index to be above everything */
   background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%);
