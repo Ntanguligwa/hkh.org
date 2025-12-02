@@ -235,9 +235,16 @@ main {
   border-radius: 0 0 var(--radius-sm) 0;
 }
 
+/* Fixed Dots Container */
 .dots-container {
   text-align: center;
-  padding: var(--space-sm);
+  padding: 15px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 10; /* Higher z-index to be above everything */
+  background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%);
+  pointer-events: none; /* Allow clicks to pass through to slideshow */
 }
 
 .dot {
@@ -248,12 +255,16 @@ main {
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  pointer-events: auto; /* Enable clicks on dots */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Add shadow for visibility */
 }
 
-.dot:hover, .active {
-  background-color: var(--primary-color);
+.dot:hover, .dot.active {
+  background-color: var(--accent-color); /* Use accent color for better visibility */
+  transform: scale(1.2);
 }
+
 
 /* ===== About Section ===== */
 .about {
