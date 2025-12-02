@@ -43,48 +43,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Main slideshow
-  let autoSlideIndex = 0;
-  const autoSlideInterval = 5000;
-  let autoSlideTimer;
+ // Main slideshow
+let autoSlideIndex = 0;
+const autoSlideInterval = 5000;
+let autoSlideTimer;
 
-  function startAutoSlideshow() {
-    showAutoSlides();
-    autoSlideTimer = setInterval(showAutoSlides, autoSlideInterval);
+function startAutoSlideshow() {
+  showAutoSlides();
+  autoSlideTimer = setInterval(showAutoSlides, autoSlideInterval);
+}
+
+function showAutoSlides() {
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+  
+  if (!slides.length) return;
+  
+  // Hide all slides
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
   }
-
-  function showAutoSlides() {
-    const slides = document.getElementsByClassName("mySlides");
-    const dots = document.getElementsByClassName("dot");
-    
-    if (!slides.length || !dots.length) return;
-    
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    
-    autoSlideIndex++;
-    if (autoSlideIndex > slides.length) autoSlideIndex = 1;
-    
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("active");
-    }
-    
-    slides[autoSlideIndex-1].style.display = "block";  
-    dots[autoSlideIndex-1].classList.add("active");
+  
+  autoSlideIndex++;
+  if (autoSlideIndex > slides.length) autoSlideIndex = 1;
+  
+  // Update dot indicators (only if dots exist)
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
   }
-
-  // Manual slide control
-  function currentSlide(n) {
-    clearInterval(autoSlideTimer);
-    autoSlideIndex = n - 1;
-    showAutoSlides();
-    autoSlideTimer = setInterval(showAutoSlides, autoSlideInterval);
+  
+  // Show current slide
+  slides[autoSlideIndex - 1].style.display = "block";
+  
+  // Activate corresponding dot (if it exists)
+  if (dots.length > 0 && autoSlideIndex <= dots.length) {
+    dots[autoSlideIndex - 1].classList.add("active");
   }
+}
 
-  // Initialize slideshow
-  startAutoSlideshow();
+// Manual slide control
+function currentSlide(n) {
+  clearInterval(autoSlideTimer);
+  autoSlideIndex = n - 1;
+  showAutoSlides();
+  autoSlideTimer = setInterval(showAutoSlides, autoSlideInterval);
+}
 
+// Initialize slideshow
+startAutoSlideshow();
+  
   // Pause on hover
   const slideshowContainer = document.querySelector('.slideshow-container');
   if (slideshowContainer) {
