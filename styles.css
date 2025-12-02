@@ -197,22 +197,11 @@ main {
   max-width: 100%;
   margin: auto;
   overflow: hidden;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0; /* Remove bottom radius */
   box-shadow: var(--shadow-lg);
 }
 
-.mySlides {
-  display: none;
-}
-.mySlides:first-child {
-  display: block;
-}
-.act-img {
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
-  object-fit: cover;
-}
+/* ... keep .mySlides, .act-img, .numbertext as they are ... */
 
 .act-caption {
   text-align: center;
@@ -224,36 +213,34 @@ main {
   width: 100%;
 }
 
-.numbertext {
-  color: white;
-  font-size: 0.9rem;
-  padding: var(--space-xs) var(--space-sm);
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.5);
-  border-radius: 0 0 var(--radius-sm) 0;
-}
-
+/* Dots Container Outside Slideshow */
 .dots-container {
   text-align: center;
-  padding: var(--space-sm);
+  padding: var(--space-md) 0;
+  position: relative; /* Change from absolute */
+  background-color: white;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-top: -1px; /* Connect with slideshow */
+  z-index: 2;
 }
 
 .dot {
   height: 15px;
   width: 15px;
   margin: 0 var(--space-xs);
-  background-color: var(--gray-light);
+  background-color: var(--gray-medium);
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.dot:hover, .active {
+.dot:hover, .dot.active {
   background-color: var(--primary-color);
+  transform: scale(1.2);
 }
+
 
 /* ===== About Section ===== */
 .about {
