@@ -480,18 +480,17 @@ main {
 }
 
 .partner-img {
-  height: 80px;
+  height: 90px;
   width: auto;
+  max-width: 160px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(10%);
 }
 
 .partner-img:hover {
-  filter: grayscale(0);
-  opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: grayscale(0%);
 }
 
 /* ===== Footer ===== */
